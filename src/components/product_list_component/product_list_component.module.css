@@ -1,0 +1,13 @@
+.productImage{
+    width: 59px;
+    height: 40px;
+    margin-left: 55px;
+}
+.product_lists_container{
+    display: flex;
+    font-size: 11px;
+    margin: 25px;
+}
+.products_style{
+    margin-left: 55px;
+}
