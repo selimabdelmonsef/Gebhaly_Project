@@ -7,7 +7,13 @@
     display: flex;
     font-size: 11px;
     margin: 25px;
+    place-content: center;
 }
 .products_style{
     margin-left: 55px;
+}
+.productNameStyle{
+    position: absolute;
+    inline-size: min-content;
+    left: 5px;
 }
