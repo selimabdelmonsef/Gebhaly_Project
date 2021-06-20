@@ -4,7 +4,7 @@ import {all, put, call, takeLatest} from 'redux-saga/effects';
 
 async function getProductListData() {
    return Axios.get(api.productList_api);
-}
+} 
 function* getProductListSaga(action) {
     try{
         const ProductListData= yield call(

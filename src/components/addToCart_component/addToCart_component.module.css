@@ -1,0 +1,14 @@
+.cartStyle{
+    float: right;
+    margin-right: 20px;
+}
+.orderQuantity{
+    float: right;
+    width: 18px;
+    line-height: 18px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
