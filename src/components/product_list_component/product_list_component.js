@@ -6,7 +6,6 @@ import { _GetOrderQuantity } from "../../redux/redux-actions/order_quantity_acti
 class ProductList extends React.Component {
     componentDidMount() {
         this.props.GetProductListData();
-        console.log(this.props.loading);
     }
     render() {
         return (
