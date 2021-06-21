@@ -15,12 +15,8 @@ class AddToCart extends React.Component {
                     </Link>
                     :
                     <i className={classnames(styles.cartStyle, "fas fa-shopping-cart")} ></i>}
-
-                {/* // onClick= {()=>console.log(this)}></i> */}
-
                 <p className={styles.orderQuantity}>{this.props?.quantity}</p>
             </div>
-
         )
     }
 }

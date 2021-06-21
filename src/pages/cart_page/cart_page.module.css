@@ -1,0 +1,31 @@
+.productImage{
+    width: 59px;
+    height: 40px;
+    margin-left: 65px;
+}
+.product_lists_container{
+    display: flex;
+    font-size: 11px;
+    margin: 25px;
+    /* place-content: center; */
+}
+.products_style{
+    margin-left: 55px;
+}
+.productNameStyle{
+    position: absolute;
+    inline-size: min-content;
+    left: 5px;
+}
+.addToCartBtn{
+    height: 25px;
+    font-size: 15px;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    width: 100px;
+    float: right;
+    margin-top: 50px;
+    cursor: pointer;
+}
