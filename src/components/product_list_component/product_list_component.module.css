@@ -7,7 +7,6 @@
     display: flex;
     font-size: 11px;
     margin: 25px;
-    /* place-content: center; */
 }
 .products_style{
     margin-left: 55px;
@@ -28,4 +27,30 @@
     float: right;
     margin-top: 20px;
     cursor: pointer;
+}
+@media only screen and (min-width:768px){
+    .product_lists_container{
+        margin: 45px;
+    }
+    .productNameStyle{
+        inline-size: unset;
+        font-size: 20px;
+        left: 42px;
+    }
+    .products_style{
+        margin-left: 26%;
+    font-size: 21px;
+    }
+    /* .productImage{
+        width: auto;
+        height: 62px;
+        margin-left: 47px;
+        float: right;
+        width: 65px;
+    } */
+    .addToCartBtn{
+        position: absolute;
+        margin-top: 65px;
+        right: 70px;
+    }
 }

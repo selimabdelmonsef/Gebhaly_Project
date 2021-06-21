@@ -11,6 +11,8 @@
 }
 .products_style{
     margin-left: 55px;
+    font-size: 15px;
+    color: green;
 }
 .productNameStyle{
     position: absolute;
@@ -26,6 +28,27 @@
     color: white;
     width: 100px;
     float: right;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.yourOrder{
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: fantasy;
+    margin-top: 40px;
+}
+.totalCost{
+    text-align: center;
+    margin-top: 60px;
+    font-size: 25px;
+    color: green;
+}
+.continueShopping{
+    height: 40px;
+    font-size: 15px;
+    background-color: blue;
+    border: none;
+    color: white;
     margin-top: 50px;
     cursor: pointer;
 }
