@@ -15,6 +15,7 @@ class ProductList extends React.Component {
     }
     componentDidMount() {
         this.props.GetProductListData();
+        console.log(this.props)
     }
     addToCartFn() {
         this.props.GetOrderQuantity();
@@ -26,9 +27,6 @@ class ProductList extends React.Component {
     render() {
         return (
             <div>
-                {this.props.loading === true ?
-                    <span>Loading...</span>
-                    :
                     <div>
                         {this.props?.data[0]?.productList.map((element, index) => {
                             return <div>
@@ -49,7 +47,6 @@ class ProductList extends React.Component {
                             </div>
                         })}
                     </div>
-                }
             </div>
         )
     }

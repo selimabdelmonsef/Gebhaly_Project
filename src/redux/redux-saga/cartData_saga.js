@@ -16,27 +16,6 @@ function* getCartData(action) {
         type: "CART DATA",
         payload: cartData,
     });
-    //     console.log(plotterDataResponse);
-    //     if(plotterDataResponse.status >=200 && plotterDataResponse.status<300){
-    //         yield put({
-    //                   type: GET_PLOTTER_DATA_SUCCESS,
-    //                   payload: plotterDataResponse.data,
-    //                 });
-    //     }
-    //     else{
-    //         yield put({
-    //             type: GET_PLOTTER_DATA_FAIL,
-    //             payload: "An Error Occured",
-    //           });
-    //     }
-    // }
-    // catch(err){
-    //     // console.log(err);
-    //     yield put({
-    //         type: GET_PLOTTER_DATA_FAIL,
-    //         payload: "An Error Occured",
-    //       });
-    // }
 }
 export default function* rootSaga() {
     yield all([takeLatest("CART DATA", getCartData)]);
