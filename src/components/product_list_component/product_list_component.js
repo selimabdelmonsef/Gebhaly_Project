@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './product_list_component.module.css';
 import { connect } from "react-redux";
 import { _GetProductListData } from "../../redux/redux-actions/product_list_actions";
-import { _GetOrderQuantity } from "../../redux/redux-actions/order_quantity_actions";
+import { _IncrementOrderQuantity } from "../../redux/redux-actions/order_quantity_actions";
 import { _GetCartData } from "../../redux/redux-actions/cartData_actions";
 
 class ProductList extends React.Component {
@@ -18,8 +18,8 @@ class ProductList extends React.Component {
         console.log(this.props)
     }
     addToCartFn() {
-        this.props.GetOrderQuantity();
-        return this.props.GetCartData({
+        this.props.IncrementOrderQuantity();
+        this.props.GetCartData({
             data: this.state.addToCardData,
             totalOrder: this.state.totalOrder
         });
@@ -64,8 +64,8 @@ const mapDisaptchToProps = (dispatch) => {
         GetProductListData: (payload) => {
             dispatch(_GetProductListData(payload));
         },
-        GetOrderQuantity: (payload) => {
-            dispatch(_GetOrderQuantity(payload));
+        IncrementOrderQuantity: (payload) => {
+            dispatch(_IncrementOrderQuantity(payload));
         },
         GetCartData: (payload) => {
             dispatch(_GetCartData(payload));

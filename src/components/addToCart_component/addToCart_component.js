@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './addToCart_component.module.css';
 import classnames from 'classnames';
 import { connect } from "react-redux";
-import { _GetOrderQuantity } from "../../redux/redux-actions/order_quantity_actions";
+import { _IncrementOrderQuantity } from "../../redux/redux-actions/order_quantity_actions";
 import { Link } from 'react-router-dom';
 
 class AddToCart extends React.Component {
@@ -28,8 +28,8 @@ const mapStateToProps = (state) => {
 
 const mapDisaptchToProps = (dispatch) => {
     return {
-        GetOrderQuantity: (payload) => {
-            dispatch(_GetOrderQuantity(payload));
+        IncrementOrderQuantity: (payload) => {
+            dispatch(_IncrementOrderQuantity(payload));
         },
     };
 };

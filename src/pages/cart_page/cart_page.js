@@ -3,7 +3,7 @@ import styles from './cart_page.module.css';
 import { connect } from "react-redux";
 import { _GetCartData } from "../../redux/redux-actions/cartData_actions";
 import { _GetProductListData } from "../../redux/redux-actions/product_list_actions";
-
+import {_DecrementOrderQuantity} from "../../redux/redux-actions/order_quantity_actions"
 
 class CartPage extends React.Component {
 
@@ -21,6 +21,7 @@ class CartPage extends React.Component {
         });
     }
     cartDataSatet() {
+        this.props.DecrementOrderQuantity();
         let getTotalCost = 0;
         this.props.cartData.data.splice(this.state.removeIndex,1);
         for(var i =0; i<this.props.cartData.data.length; i++){
@@ -62,7 +63,8 @@ class CartPage extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        cartData: state.CartDataReducer.data
+        cartData: state.CartDataReducer.data,
+        quantity: state.OrderQuantityReducer,
     };
 };
 
@@ -70,6 +72,9 @@ const mapDisaptchToProps = (dispatch) => {
     return {
         GetCartData: (payload) => {
             dispatch(_GetCartData(payload));
+        },
+        DecrementOrderQuantity: (payload) => {
+            dispatch(_DecrementOrderQuantity(payload));
         },
         GetProductListData: (payload) => {
             dispatch(_GetProductListData(payload));
