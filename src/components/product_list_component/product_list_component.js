@@ -11,42 +11,48 @@ class ProductList extends React.Component {
         this.state = {
             addToCardData: [],
             totalOrder: 0,
+            totalOrderSum: 0
         }
     }
     componentDidMount() {
         this.props.GetProductListData();
-        console.log(this.props)
     }
     addToCartFn() {
+
+        console.log(this.props?.cartData?.totalOrder)
         this.props.IncrementOrderQuantity();
         this.props.GetCartData({
             data: this.state.addToCardData,
             totalOrder: this.state.totalOrder
         });
+        
+        
+
     }
     render() {
         return (
             <div>
-                    <div>
-                        {this.props?.data[0]?.productList.map((element, index) => {
-                            return <div>
-                                <div className={styles.product_lists_container}>
-                                    <p className={styles.productNameStyle}>{element.productName}</p>
-                                    <p className={styles.products_style}>{element.category}</p>
-                                    <p className={styles.products_style}>{element.available_Quantity}</p>
-                                    <p className={styles.products_style}>{element.price}$</p>
-                                    <div>
-                                        <img className={styles.productImage} src={element.img} alt="" />
-
-                                        <button onClick={() => this.setState({ addToCardData: [...this.state.addToCardData, ...[element]], totalOrder: this.state.totalOrder + element.price }, () => this.addToCartFn())}
-
-                                            className={styles.addToCartBtn}>Add To Cart</button>
-                                    </div>
+                <div>
+                    {this.props?.data[0]?.productList.map((element, index) => {
+                        return <div>
+                            <div className={styles.product_lists_container}>
+                                <p className={styles.productNameStyle}>{element.productName}</p>
+                                <p className={styles.products_style}>{element.category}</p>
+                                <p className={styles.products_style}>{element.available_Quantity}</p>
+                                <p className={styles.products_style}>{element.price}$</p>
+                                <div>
+                                    <img className={styles.productImage} src={element.img} alt="" />
+                                    <button onClick={() => this.setState({
+                                        addToCardData: [...this.state.addToCardData, ...[element]],
+                                        totalOrder: this.state.totalOrder + element.price,
+                                    }, () => this.addToCartFn())}
+                                        className={styles.addToCartBtn}>Add To Cart</button>
                                 </div>
-                                <hr />
                             </div>
-                        })}
-                    </div>
+                            <hr />
+                        </div>
+                    })}
+                </div>
             </div>
         )
     }

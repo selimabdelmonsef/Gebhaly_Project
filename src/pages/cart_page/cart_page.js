@@ -3,7 +3,7 @@ import styles from './cart_page.module.css';
 import { connect } from "react-redux";
 import { _GetCartData } from "../../redux/redux-actions/cartData_actions";
 import { _GetProductListData } from "../../redux/redux-actions/product_list_actions";
-import {_DecrementOrderQuantity} from "../../redux/redux-actions/order_quantity_actions"
+import { _DecrementOrderQuantity } from "../../redux/redux-actions/order_quantity_actions"
 
 class CartPage extends React.Component {
 
@@ -20,16 +20,23 @@ class CartPage extends React.Component {
             cartDataState: this.props.cartData
         });
     }
-    cartDataSatet() {
+    cartDataState() {
         this.props.DecrementOrderQuantity();
         let getTotalCost = 0;
-        this.props.cartData.data.splice(this.state.removeIndex,1);
-        for(var i =0; i<this.props.cartData.data.length; i++){
-            getTotalCost = getTotalCost+this.props.cartData.data[i].price;
+        this.props.cartData.data.splice(this.state.removeIndex, 1);
+
+        for (var i = 0; i < this.props.cartData.data.length; i++) {
+            getTotalCost = getTotalCost + this.props.cartData.data[i].price;
         }
-            this.setState({
-                cartDataState: {data:this.props.cartData.data, totalOrder: getTotalCost}
-            })
+
+        this.setState({
+            cartDataState: { data: this.props.cartData.data, totalOrder: getTotalCost }
+        }, () => this.props.GetCartData({
+            data: this.state.cartDataState.data,
+            totalOrder: getTotalCost
+        }));
+
+        console.log("SS", this.props.cartData)
     }
     goToHomePage() {
         this.props.history.push("/")
@@ -42,11 +49,11 @@ class CartPage extends React.Component {
                 {this.state.cartDataState.data?.map((element, index) => {
                     return <div>
                         <div className={styles.product_lists_container}>
-                            <p className={styles.productNameStyle}>{element.productName}</p>
-                            <p className={styles.products_style}>{element.price}$</p>
+                            <p className={styles.productNameStyle}>{element?.productName}</p>
+                            <p className={styles.products_style}>{element?.price}$</p>
                             <div>
-                                <img className={styles.productImage} src={element.img} alt="" />
-                                <button onClick={() => this.setState({ removeIndex: index }, () => this.cartDataSatet())} className={styles.addToCartBtn}>Remove</button>
+                                <img className={styles.productImage} src={element?.img} alt="" />
+                                <button onClick={() => this.setState({ removeIndex: index }, () => this.cartDataState())} className={styles.addToCartBtn}>Remove</button>
                             </div>
                         </div>
                         <hr />
