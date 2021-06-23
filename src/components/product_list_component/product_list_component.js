@@ -45,7 +45,7 @@ class ProductList extends React.Component {
                                 <p className={styles.products_style}>{element.category}</p>
                                 <p className={styles.products_style}>{element.available_Quantity}</p>
                                 <p className={styles.products_style}>{element.price}$</p>
-                                <div>
+                                <div className={styles.addToCart_prodImage}>
                                     <img className={styles.productImage} src={element.img} alt="" />
                                     <button onClick={() => this.setState({
                                         addToCardData: [...this.state.addToCardData, ...[element]],

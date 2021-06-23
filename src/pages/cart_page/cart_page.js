@@ -50,19 +50,17 @@ class CartPage extends React.Component {
                     return <div>
                         <div className={styles.product_lists_container}>
                             <p className={styles.productNameStyle}>{element?.productName}</p>
-                            <p className={styles.products_style}>{element?.price}$</p>
-                            <div>
+                            <p className={styles.costStyle}>{element?.price}$</p>
+                            <div className={styles.remove_prodImage_wrapper}>
                                 <img className={styles.productImage} src={element?.img} alt="" />
-                                <button onClick={() => this.setState({ removeIndex: index }, () => this.cartDataState())} className={styles.addToCartBtn}>Remove</button>
+                                <button onClick={() => this.setState({ removeIndex: index }, () => this.cartDataState())} className={styles.removeFromCartBtn}>Remove</button>
                             </div>
                         </div>
                         <hr />
                     </div>
                 })}
                 <div className={styles.totalCost}>Total Cost: {this.state.cartDataState.totalOrder}$</div>
-                {/* <button onClick={() => this.props.history.push("/")} className={styles.continueShopping}>CONTINUE SHOPPING</button> */}
-                <button onClick={() => this.goToHomePage()} className={styles.continueShopping}>CONTINUE SHOPPING</button>
-
+                <div className={styles.continueShoppingWrapper}><button onClick={() => this.goToHomePage()} className={styles.continueShoppingBtn}>CONTINUE SHOPPING</button></div>
             </div>
         )
     }

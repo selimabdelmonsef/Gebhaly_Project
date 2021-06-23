@@ -1,12 +1,13 @@
 .productImage{
     width: 59px;
-    height: 40px;
-    margin-left: 65px;
+    margin-left: 17px;
 }
 .product_lists_container{
     display: flex;
     font-size: 11px;
     margin: 25px;
+    text-align-last: center;
+    align-items: center;
 }
 .products_style{
     margin-left: 55px;
@@ -41,16 +42,12 @@
         margin-left: 26%;
     font-size: 21px;
     }
-    /* .productImage{
-        width: auto;
-        height: 62px;
-        margin-left: 47px;
-        float: right;
-        width: 65px;
-    } */
     .addToCartBtn{
-        position: absolute;
         margin-top: 65px;
         right: 70px;
+    }
+    .addToCart_prodImage{
+        display: grid;
+        margin-left: 100px;
     }
 }
