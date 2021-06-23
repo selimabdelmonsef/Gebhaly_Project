@@ -11,22 +11,27 @@ class ProductList extends React.Component {
         this.state = {
             addToCardData: [],
             totalOrder: 0,
-            totalOrderSum: 0
+            totalOrderSum: 0,
         }
     }
     componentDidMount() {
         this.props.GetProductListData();
+        console.log(this.props.cartData.data?.length)
+        for (var i = 0; i < this.props?.cartData?.data?.length; i++) {
+            this.setState({
+                addToCardData: this.props?.cartData?.data,
+                totalOrder:this.props?.cartData?.totalOrder,
+            })
+        }
     }
     addToCartFn() {
-
-        console.log(this.props?.cartData?.totalOrder)
         this.props.IncrementOrderQuantity();
         this.props.GetCartData({
             data: this.state.addToCardData,
             totalOrder: this.state.totalOrder
         });
-        
-        
+
+
 
     }
     render() {
