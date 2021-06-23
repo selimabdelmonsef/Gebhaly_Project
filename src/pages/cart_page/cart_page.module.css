@@ -1,13 +1,13 @@
 .productImage{
     width: 59px;
-    height: 40px;
-    margin-left: 104px;
+    margin-left: 50px
 }
 .product_lists_container{
     display: flex;
     font-size: 11px;
     margin: 25px;
-    justify-content: center;
+    align-items: center;
+    text-align-last: center;
 }
 .costStyle{
     margin-left: 100px;
@@ -15,7 +15,6 @@
     color: green;
 }
 .productNameStyle{
-    position: absolute;
     inline-size: min-content;
     left: 5px;
     font-size: 20px;
@@ -30,6 +29,7 @@
     width: 100px;
     float: right;
     margin-top: 50px;
+    margin-right: 16px;
     cursor: pointer;
 }
 .yourOrder{
@@ -56,19 +56,15 @@
 }
 
 @media only screen and (min-width:768px){
-    .remove_prodImage_wrapper{
-        position: absolute;
-        right: 100px;
-        margin-top: 12px;
-    }
     .removeFromCartBtn{
-        margin-top: 10px;
-        margin-left: 100px;
+        position: absolute;
+        right: 10px;
     }
 .productNameStyle{
     inline-size: auto;
     font-size: 30px;
-    left: 100px;
+    position: absolute;
+    margin-left: 20px;
 }
 .costStyle{
     margin-left: 0px;
@@ -82,6 +78,9 @@
 }
 .continueShoppingWrapper{
     text-align: center;
+}
+.product_lists_container{
+    justify-content: center;
 }
 
 }
