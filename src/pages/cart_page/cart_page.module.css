@@ -1,6 +1,6 @@
 .productImage{
     width: 59px;
-    margin-left: 50px
+    margin-left: 23px;
 }
 .product_lists_container{
     display: flex;
@@ -10,13 +10,14 @@
     text-align-last: center;
 }
 .costStyle{
-    margin-left: 100px;
+    margin-left: 125px;
     font-size: 24px;
     color: green;
 }
 .productNameStyle{
     inline-size: min-content;
-    left: 5px;
+    position: absolute;
+    left: 25px;
     font-size: 20px;
 }
 .removeFromCartBtn{
@@ -54,6 +55,10 @@
     cursor: pointer;
     width: 100%;
 }
+.remove_prodImage_wrapper{
+    display: grid;
+    margin-left: 80px;
+}
 
 @media only screen and (min-width:768px){
     .removeFromCartBtn{
@@ -63,7 +68,6 @@
 .productNameStyle{
     inline-size: auto;
     font-size: 30px;
-    position: absolute;
     margin-left: 20px;
 }
 .costStyle{
